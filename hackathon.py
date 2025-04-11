@@ -317,7 +317,7 @@ while running:
     pygame.draw.circle(surface, blue, (enemy32.x + 10, enemy32.y + 10), 12)
     screen.blit(surface, (100, 100))
 
-    # Check win condition
+    
     if player.colliderect(endZone) and not game_finished:
         if winnerMusic:
             pygame.mixer.music.load('Despicable Me 2  Happy Lyric Video by Pharrell Williams  Illumination.mp3')
@@ -334,7 +334,7 @@ while running:
             final_message = "Good Try!"
 
     lives_text = font.render(f"Lives: {lives}", True, black)
-    text_rect = lives_text.get_rect(topright=(1180, 20))  # Adjust 1180 to fit your screen width
+    text_rect = lives_text.get_rect(topright=(1180, 20))  
     screen.blit(lives_text, text_rect)
 
     # Timer and Score Display
@@ -352,8 +352,7 @@ while running:
 
     screen.blit(timer_text, (20, 20))
     screen.blit(score_text, (20, 60))
-    # Draw Lives Bar on the right side
-    bar_x = 1120  # Adjust to screen width
+    bar_x = 1120  
     bar_y_start = 150
     bar_spacing = 40
     bar_width = 30
@@ -365,12 +364,12 @@ while running:
 
     if game_finished:
         while True:
-            # Create final screen
-            screen.fill(background)  # Clear the screen
+            
+            screen.fill(background)  
 
-            big_font = pygame.font.SysFont(None, 72)  # Big font for message
-            middle_font = pygame.font.SysFont(None, 48)  # Middle font for score/time
-            small_font = pygame.font.SysFont(None, 32)  # Smaller font for restart / quit
+            big_font = pygame.font.SysFont(None, 72)  
+            middle_font = pygame.font.SysFont(None, 48) 
+            small_font = pygame.font.SysFont(None, 32)  
 
             # Create texts
             message_text = big_font.render(final_message, True, black)
@@ -403,9 +402,7 @@ while running:
                         pygame.quit()
                         exit()
                     if event.key == pygame.K_r:
-                        # Restart the game by re-running the script
                         import os
-
                         os.execl(sys.executable, sys.executable, *sys.argv)
 
     pygame.display.flip()
