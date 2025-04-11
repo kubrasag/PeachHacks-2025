@@ -316,16 +316,8 @@ while running:
     pygame.draw.circle(surface, blue, (enemy31.x + 10, enemy31.y + 10), 12)
     pygame.draw.circle(surface, blue, (enemy32.x + 10, enemy32.y + 10), 12)
     screen.blit(surface, (100, 100))
-    if player.colliderect(endZone):
-        screen.blit(thanksSize,(100,100))
-        player.x=930
-        player.y=530
-        if winnerMusic:
-            pygame.mixer.music.load('Despicable Me 2  Happy Lyric Video by Pharrell Williams  Illumination.mp3')
-            pygame.mixer.music.play(-1)
-            winnerMusic=False
 
-            # Check win condition
+    # Check win condition
     if player.colliderect(endZone) and not game_finished:
         if winnerMusic:
             pygame.mixer.music.load('Despicable Me 2  Happy Lyric Video by Pharrell Williams  Illumination.mp3')
